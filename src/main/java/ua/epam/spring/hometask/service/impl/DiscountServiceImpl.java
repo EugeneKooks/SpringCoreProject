@@ -2,6 +2,8 @@ package ua.epam.spring.hometask.service.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import ua.epam.spring.hometask.domain.Discount;
 import ua.epam.spring.hometask.domain.Event;
@@ -14,6 +16,7 @@ import javax.annotation.Nullable;
 import java.time.LocalDateTime;
 import java.util.*;
 
+@Service
 public class DiscountServiceImpl implements DiscountService {
 
     private static final Logger logger = LoggerFactory.getLogger(DiscountServiceImpl.class);
@@ -38,6 +41,7 @@ public class DiscountServiceImpl implements DiscountService {
         return new HashSet<>(discountStrategies);
     }
 
+    @Autowired(required = false)
     public void setDiscountStrategies(@Nonnull Set<DiscountStrategy> discountStrategies) {
         this.discountStrategies = discountStrategies;
         if (!discountStrategies.isEmpty())

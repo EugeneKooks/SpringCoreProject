@@ -1,88 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="168" started-at="2018-08-16T14:01:45Z" finished-at="2018-08-16T14:01:46Z">
+  <suite name="Default suite" duration-ms="479" started-at="2018-08-16T14:48:48Z" finished-at="2018-08-16T14:48:49Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="168" started-at="2018-08-16T14:01:45Z" finished-at="2018-08-16T14:01:46Z">
-      <class name="ua.epam.spring.hometask.service.impl.AuditoriumServiceTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:ua.epam.spring.hometask.service.impl.AuditoriumServiceTest@6d8a00e3]" name="init" is-config="true" duration-ms="125" started-at="2018-08-16T17:01:45Z" finished-at="2018-08-16T17:01:46Z">
+    <test name="Default test" duration-ms="479" started-at="2018-08-16T14:48:48Z" finished-at="2018-08-16T14:48:49Z">
+      <class name="ua.epam.spring.hometask.service.impl.UserServiceTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:ua.epam.spring.hometask.service.impl.UserServiceTest@573f2bb1]" name="init" is-config="true" duration-ms="401" started-at="2018-08-16T17:48:48Z" finished-at="2018-08-16T17:48:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="testGetAllAuditorium()[pri:0, instance:ua.epam.spring.hometask.service.impl.AuditoriumServiceTest@6d8a00e3]" name="testGetAllAuditorium" duration-ms="6" started-at="2018-08-16T17:01:46Z" finished-at="2018-08-16T17:01:46Z">
+        <test-method status="PASS" signature="testGetUserByExistentEmail()[pri:0, instance:ua.epam.spring.hometask.service.impl.UserServiceTest@573f2bb1]" name="testGetUserByExistentEmail" duration-ms="62" started-at="2018-08-16T17:48:49Z" finished-at="2018-08-16T17:48:49Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGetAllAuditorium -->
-        <test-method status="PASS" signature="testGetByName(java.lang.String, int, int)[pri:0, instance:ua.epam.spring.hometask.service.impl.AuditoriumServiceTest@6d8a00e3]" name="testGetByName" duration-ms="4" started-at="2018-08-16T17:01:46Z" data-provider="auditoriumDataProvider" finished-at="2018-08-16T17:01:46Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[First]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[6]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- testGetUserByExistentEmail -->
+        <test-method status="PASS" signature="testGetUserByNotExistentEmail()[pri:0, instance:ua.epam.spring.hometask.service.impl.UserServiceTest@573f2bb1]" name="testGetUserByNotExistentEmail" duration-ms="0" started-at="2018-08-16T17:48:49Z" finished-at="2018-08-16T17:48:49Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGetByName -->
-        <test-method status="PASS" signature="testGetByName(java.lang.String, int, int)[pri:0, instance:ua.epam.spring.hometask.service.impl.AuditoriumServiceTest@6d8a00e3]" name="testGetByName" duration-ms="1" started-at="2018-08-16T17:01:46Z" data-provider="auditoriumDataProvider" finished-at="2018-08-16T17:01:46Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Second]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[4]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetByName -->
-        <test-method status="PASS" signature="testGetByName(java.lang.String, int, int)[pri:0, instance:ua.epam.spring.hometask.service.impl.AuditoriumServiceTest@6d8a00e3]" name="testGetByName" duration-ms="1" started-at="2018-08-16T17:01:46Z" data-provider="auditoriumDataProvider" finished-at="2018-08-16T17:01:46Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Third]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[4]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetByName -->
-        <test-method status="PASS" signature="testGetByNotExistentName()[pri:0, instance:ua.epam.spring.hometask.service.impl.AuditoriumServiceTest@6d8a00e3]" name="testGetByNotExistentName" duration-ms="4" started-at="2018-08-16T17:01:46Z" finished-at="2018-08-16T17:01:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetByNotExistentName -->
-      </class> <!-- ua.epam.spring.hometask.service.impl.AuditoriumServiceTest -->
+        </test-method> <!-- testGetUserByNotExistentEmail -->
+      </class> <!-- ua.epam.spring.hometask.service.impl.UserServiceTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

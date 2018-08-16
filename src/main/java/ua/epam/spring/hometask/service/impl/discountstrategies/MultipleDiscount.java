@@ -3,6 +3,8 @@ package ua.epam.spring.hometask.service.impl.discountstrategies;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import org.springframework.stereotype.Component;
+
 import ua.epam.spring.hometask.domain.Discount;
 import ua.epam.spring.hometask.domain.Event;
 import ua.epam.spring.hometask.domain.User;
@@ -13,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NavigableSet;
 
+@Component
 public class MultipleDiscount implements DiscountStrategy {
 
     private int discountMultiplier;

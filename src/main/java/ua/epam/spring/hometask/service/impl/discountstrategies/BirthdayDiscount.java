@@ -8,11 +8,14 @@ import java.util.NavigableSet;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import org.springframework.stereotype.Component;
+
 import ua.epam.spring.hometask.domain.Discount;
 import ua.epam.spring.hometask.domain.Event;
 import ua.epam.spring.hometask.domain.User;
 import ua.epam.spring.hometask.service.DiscountStrategy;
 
+@Component
 public class BirthdayDiscount implements DiscountStrategy {
 
     private int datesDifference;

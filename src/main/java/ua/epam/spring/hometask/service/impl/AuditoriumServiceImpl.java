@@ -2,6 +2,8 @@ package ua.epam.spring.hometask.service.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import ua.epam.spring.hometask.domain.Auditorium;
@@ -12,12 +14,13 @@ import javax.annotation.Nullable;
 import java.util.*;
 import java.util.stream.Collectors;
 
+@Service
 public class AuditoriumServiceImpl implements AuditoriumService {
     private static final Logger logger = LoggerFactory.getLogger(AuditoriumServiceImpl.class);
 
     private final Set<Auditorium> auditoriums;
 
-    public AuditoriumServiceImpl(Map<String, String> auditoriumProperties) {
+    public AuditoriumServiceImpl(@Value("#{${auditorium.property.map}}") Map<String, String> auditoriumProperties) {
         Set<Auditorium> parsedResult = new HashSet<>();
         try {
             parsedResult = parsePropertyMap(auditoriumProperties);

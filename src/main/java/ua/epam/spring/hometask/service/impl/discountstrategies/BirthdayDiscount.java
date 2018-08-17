@@ -38,7 +38,12 @@ public class BirthdayDiscount implements DiscountStrategy {
             return null;
         long rangeBetweenEvents = Math.abs(ChronoUnit.DAYS.between(user.getBirthday().with(Year.from(time)), time));
         return rangeBetweenEvents <= datesDifference
-                ? new Discount(discountReason, discountRate)
+                ? new Discount(this, discountReason, discountRate)
                 : null;
+    }
+
+    @Override
+    public String toString() {
+        return "BirthdayDiscount";
     }
 }

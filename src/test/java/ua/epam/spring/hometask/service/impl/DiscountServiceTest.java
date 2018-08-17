@@ -25,13 +25,13 @@ public class DiscountServiceTest {
         DiscountStrategy strategy1 = mock(DiscountStrategy.class);
         DiscountStrategy strategy2 = mock(DiscountStrategy.class);
         when(strategy1.calculateDiscount(any(), any(Event.class), any(LocalDateTime.class), anyLong(), any()))
-                .thenReturn(new Discount("", (byte) 10));
+                .thenReturn(new Discount(strategy1, "", (byte) 10));
         when(strategy1.calculateDiscount(any(), any(Event.class), any(LocalDateTime.class), eq(2L), any()))
                 .thenReturn(null);
         when(strategy2.calculateDiscount(any(), any(Event.class), any(LocalDateTime.class), anyLong(), any()))
                 .thenReturn(null);
         when(strategy2.calculateDiscount(any(), any(Event.class), any(LocalDateTime.class), eq(1L), any()))
-                .thenReturn(new Discount("", (byte) 50));
+                .thenReturn(new Discount(strategy2, "", (byte) 50));
         discountService.setDiscountStrategies(new HashSet<>(Arrays.asList(strategy1, strategy2)));
     }
 
@@ -50,8 +50,8 @@ public class DiscountServiceTest {
 
     @Test(dataProvider = "getDiscountDataProvider")
     public void testGetDiscountMethod(User user, Event event, LocalDateTime time, long seat, NavigableSet<Long> tickets, byte result) {
-        byte discount = discountService.getDiscount(user, event, time, seat, tickets);
+        Discount discount = discountService.getDiscount(user, event, time, seat, tickets);
         discountService.getDiscountStrategies().forEach(strategy -> verify(strategy).calculateDiscount(user, event, time, seat, tickets));
-        assertEquals(discount, result);
+        assertEquals(discount.getDiscount(), result);
     }
 }

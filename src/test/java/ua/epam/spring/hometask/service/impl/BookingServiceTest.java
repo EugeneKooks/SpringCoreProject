@@ -3,6 +3,7 @@ package ua.epam.spring.hometask.service.impl;
 import org.testng.annotations.*;
 
 import ua.epam.spring.hometask.domain.Auditorium;
+import ua.epam.spring.hometask.domain.Discount;
 import ua.epam.spring.hometask.domain.Event;
 import ua.epam.spring.hometask.domain.EventRating;
 import ua.epam.spring.hometask.domain.Ticket;
@@ -31,8 +32,9 @@ public class BookingServiceTest {
     public void init() {
         testDateTime = LocalDateTime.of(2017, 10, 24, 12, 0);
         discountServiceMock = mock(DiscountService.class);
-        when(discountServiceMock.getDiscount(any(), any(),any(), anyLong(), any())).thenReturn((byte) 0);
-        when(discountServiceMock.getDiscount(any(User.class), any(),any(), eq(2L), any())).thenReturn((byte) 30);
+        when(discountServiceMock.getDiscount(any(), any(),any(), anyLong(), any())).thenReturn(new Discount());
+        when(discountServiceMock.getDiscount(any(User.class), any(),any(), eq(2L), any()))
+                .thenReturn(new Discount(null, "", (byte) 30));
 
         initTestEntities();
     }

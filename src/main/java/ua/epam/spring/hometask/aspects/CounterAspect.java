@@ -18,7 +18,7 @@ import java.util.Set;
 public class CounterAspect {
     private static final Logger logger = LoggerFactory.getLogger(CounterAspect.class);
 
-    private final Map<Event, Statistic> eventStatistic = new HashMap<>();
+    private final Map<Event, EventStatistic> eventStatistic = new HashMap<>();
 
     @AfterReturning(
             pointcut = "execution(* spring.petproject.service.EventService.getByName(*))",
@@ -26,7 +26,7 @@ public class CounterAspect {
     )
     public void countAccessEventByNameTimes(Event event) {
         if (event != null) {
-            Statistic statistic = eventStatistic.computeIfAbsent(event, e -> new Statistic());
+            EventStatistic statistic = eventStatistic.computeIfAbsent(event, e -> new EventStatistic());
             statistic.accessedByName++;
             logger.debug("Event {} accessed by name {} times", event, statistic.accessedByName);
         }
@@ -36,7 +36,7 @@ public class CounterAspect {
             pointcut = "execution(* spring.petproject.service.BookingService.getTicketsPrice(..)) && args(event, ..))"
     )
     public void countPriceQueriedTimes(Event event) {
-        Statistic statistic = eventStatistic.computeIfAbsent(event, e -> new Statistic());
+        EventStatistic statistic = eventStatistic.computeIfAbsent(event, e -> new EventStatistic());
         statistic.priceQueried++;
         logger.debug("Price queried for event {} {} times", event, statistic.priceQueried);
     }
@@ -47,32 +47,32 @@ public class CounterAspect {
     public void countTicketBookedTimes(Set<Ticket> tickets) {
         tickets.forEach(ticket -> {
             Event event = ticket.getEvent();
-            Statistic statistic = eventStatistic.computeIfAbsent(event, e -> new Statistic());
+            EventStatistic statistic = eventStatistic.computeIfAbsent(event, e -> new EventStatistic());
             statistic.ticketsBooked++;
             logger.debug("For event {} booked {} tickets", event, statistic.ticketsBooked);
         });
     }
 
-    public Statistic getStatisticByEvent(Event e) {
+    public EventStatistic getStatisticByEvent(Event e) {
         return eventStatistic.get(e);
     }
 
-    public Map<Event, Statistic> getAllStatistic() {
-        return eventStatistic;
+    public Map<Event, EventStatistic> getAllStatistic() {
+        return new HashMap<>(eventStatistic);
     }
 
-    public static class Statistic {
+    public final static class EventStatistic {
         private int accessedByName;
         private int priceQueried;
         private int ticketsBooked;
 
-        private Statistic(int accessedByName, int priceQueried, int ticketsBooked) {
+        private EventStatistic(int accessedByName, int priceQueried, int ticketsBooked) {
             this.accessedByName = accessedByName;
             this.priceQueried = priceQueried;
             this.ticketsBooked = ticketsBooked;
         }
 
-        private Statistic() {
+        private EventStatistic() {
         }
 
         public int getAccessedByName() {
@@ -91,7 +91,7 @@ public class CounterAspect {
 
         @Override
         public String toString() {
-            return "Statistic{" +
+            return "EventStatistic{" +
                     "accessedByName=" + accessedByName +
                     ", priceQueried=" + priceQueried +
                     ", ticketsBooked=" + ticketsBooked +

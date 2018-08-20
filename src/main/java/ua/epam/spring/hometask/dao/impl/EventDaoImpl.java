@@ -6,7 +6,7 @@ import ua.epam.spring.hometask.dao.AbstractStaticStorage;
 import ua.epam.spring.hometask.domain.Event;
 
 @Repository
-public class StaticEventDAO extends AbstractStaticStorage<Event> {
+public class EventDaoImpl extends AbstractStaticStorage<Event> {
 
     @Override
     protected Class<Event> getDomainClass() {

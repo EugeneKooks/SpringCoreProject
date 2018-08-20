@@ -7,6 +7,6 @@
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="spring.petproject"/>
+    <context:component-scan base-package="ua.epam.spring.hometask"/>
     <context:property-placeholder location="classpath:/auditoriums/*.properties"/>
 </beans>

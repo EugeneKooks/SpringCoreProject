@@ -1,25 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="479" started-at="2018-08-16T14:48:48Z" finished-at="2018-08-16T14:48:49Z">
+  <suite name="Default suite" duration-ms="910" started-at="2018-08-20T09:28:28Z" finished-at="2018-08-20T09:28:29Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="479" started-at="2018-08-16T14:48:48Z" finished-at="2018-08-16T14:48:49Z">
-      <class name="ua.epam.spring.hometask.service.impl.UserServiceTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:ua.epam.spring.hometask.service.impl.UserServiceTest@573f2bb1]" name="init" is-config="true" duration-ms="401" started-at="2018-08-16T17:48:48Z" finished-at="2018-08-16T17:48:49Z">
+    <test name="Default test" duration-ms="910" started-at="2018-08-20T09:28:28Z" finished-at="2018-08-20T09:28:29Z">
+      <class name="ua.epam.spring.hometask.aspects.CounterAspectTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:ua.epam.spring.hometask.aspects.CounterAspectTest@6d8a00e3]" name="init" is-config="true" duration-ms="714" started-at="2018-08-20T12:28:28Z" finished-at="2018-08-20T12:28:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="testGetUserByExistentEmail()[pri:0, instance:ua.epam.spring.hometask.service.impl.UserServiceTest@573f2bb1]" name="testGetUserByExistentEmail" duration-ms="62" started-at="2018-08-16T17:48:49Z" finished-at="2018-08-16T17:48:49Z">
+        <test-method status="PASS" signature="testBookTickets()[pri:0, instance:ua.epam.spring.hometask.aspects.CounterAspectTest@6d8a00e3]" name="testBookTickets" duration-ms="57" started-at="2018-08-20T12:28:29Z" finished-at="2018-08-20T12:28:29Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGetUserByExistentEmail -->
-        <test-method status="PASS" signature="testGetUserByNotExistentEmail()[pri:0, instance:ua.epam.spring.hometask.service.impl.UserServiceTest@573f2bb1]" name="testGetUserByNotExistentEmail" duration-ms="0" started-at="2018-08-16T17:48:49Z" finished-at="2018-08-16T17:48:49Z">
+        </test-method> <!-- testBookTickets -->
+        <test-method status="PASS" signature="init()[pri:0, instance:ua.epam.spring.hometask.aspects.CounterAspectTest@6d8a00e3]" name="init" is-config="true" duration-ms="17" started-at="2018-08-20T12:28:29Z" finished-at="2018-08-20T12:28:29Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGetUserByNotExistentEmail -->
-      </class> <!-- ua.epam.spring.hometask.service.impl.UserServiceTest -->
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="testGetByName()[pri:0, instance:ua.epam.spring.hometask.aspects.CounterAspectTest@6d8a00e3]" name="testGetByName" duration-ms="5" started-at="2018-08-20T12:28:29Z" finished-at="2018-08-20T12:28:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetByName -->
+        <test-method status="PASS" signature="init()[pri:0, instance:ua.epam.spring.hometask.aspects.CounterAspectTest@6d8a00e3]" name="init" is-config="true" duration-ms="15" started-at="2018-08-20T12:28:29Z" finished-at="2018-08-20T12:28:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="testGetByWrongName()[pri:0, instance:ua.epam.spring.hometask.aspects.CounterAspectTest@6d8a00e3]" name="testGetByWrongName" duration-ms="2" started-at="2018-08-20T12:28:29Z" finished-at="2018-08-20T12:28:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetByWrongName -->
+        <test-method status="PASS" signature="init()[pri:0, instance:ua.epam.spring.hometask.aspects.CounterAspectTest@6d8a00e3]" name="init" is-config="true" duration-ms="16" started-at="2018-08-20T12:28:29Z" finished-at="2018-08-20T12:28:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="testGetEmptyStatisticByEvent()[pri:0, instance:ua.epam.spring.hometask.aspects.CounterAspectTest@6d8a00e3]" name="testGetEmptyStatisticByEvent" duration-ms="2" started-at="2018-08-20T12:28:29Z" finished-at="2018-08-20T12:28:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetEmptyStatisticByEvent -->
+        <test-method status="PASS" signature="init()[pri:0, instance:ua.epam.spring.hometask.aspects.CounterAspectTest@6d8a00e3]" name="init" is-config="true" duration-ms="20" started-at="2018-08-20T12:28:29Z" finished-at="2018-08-20T12:28:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="testPriceQueried()[pri:0, instance:ua.epam.spring.hometask.aspects.CounterAspectTest@6d8a00e3]" name="testPriceQueried" duration-ms="5" started-at="2018-08-20T12:28:29Z" finished-at="2018-08-20T12:28:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPriceQueried -->
+        <test-method status="PASS" signature="init()[pri:0, instance:ua.epam.spring.hometask.aspects.CounterAspectTest@6d8a00e3]" name="init" is-config="true" duration-ms="13" started-at="2018-08-20T12:28:29Z" finished-at="2018-08-20T12:28:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="testPriceQueriedException()[pri:0, instance:ua.epam.spring.hometask.aspects.CounterAspectTest@6d8a00e3]" name="testPriceQueriedException" duration-ms="3" started-at="2018-08-20T12:28:29Z" finished-at="2018-08-20T12:28:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPriceQueriedException -->
+      </class> <!-- ua.epam.spring.hometask.aspects.CounterAspectTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -2,11 +2,9 @@ package ua.epam.spring.hometask.service.impl;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import ua.epam.spring.hometask.domain.User;
 import ua.epam.spring.hometask.service.AbstractDomainObjectService;
 import ua.epam.spring.hometask.service.UserService;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -21,7 +21,7 @@ public class DiscountAspect {
     private static final Logger logger = LoggerFactory.getLogger(DiscountAspect.class);
      private final Map<DiscountStrategy, Map<User, Integer>> discountStatistic = new HashMap<>();
      @AfterReturning(
-            pointcut = "execution(* spring.petproject.service.DiscountService.getDiscount(..)) && args(user, ..)",
+            pointcut = "execution(* ua.epam.spring.hometask.service.DiscountService.getDiscount(..)) && args(user, ..)",
             returning = "discount"
     )
     public void calculateDiscountTimes(User user, Discount discount) {

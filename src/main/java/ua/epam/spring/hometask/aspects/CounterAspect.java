@@ -5,10 +5,8 @@ import org.aspectj.lang.annotation.Aspect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-
 import ua.epam.spring.hometask.domain.Event;
 import ua.epam.spring.hometask.domain.Ticket;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -16,12 +14,12 @@ import java.util.Set;
 @Aspect
 @Component
 public class CounterAspect {
-    private static final Logger logger = LoggerFactory.getLogger(CounterAspect.class);
+	private static final Logger logger = LoggerFactory.getLogger(CounterAspect.class);
 
     private final Map<Event, EventStatistic> eventStatistic = new HashMap<>();
 
     @AfterReturning(
-            pointcut = "execution(* spring.petproject.service.EventService.getByName(*))",
+            pointcut = "execution(* ua.epam.spring.hometask.service.EventService.getByName(*))",
             returning = "event"
     )
     public void countAccessEventByNameTimes(Event event) {
@@ -33,7 +31,7 @@ public class CounterAspect {
     }
 
     @AfterReturning(
-            pointcut = "execution(* spring.petproject.service.BookingService.getTicketsPrice(..)) && args(event, ..))"
+            pointcut = "execution(* ua.epam.spring.hometask.service.BookingService.getTicketsPrice(..)) && args(event, ..))"
     )
     public void countPriceQueriedTimes(Event event) {
         EventStatistic statistic = eventStatistic.computeIfAbsent(event, e -> new EventStatistic());
@@ -42,7 +40,7 @@ public class CounterAspect {
     }
 
     @AfterReturning(
-            pointcut = "execution(* spring.petproject.service.BookingService.bookTickets(..)) && args(tickets))"
+            pointcut = "execution(* ua.epam.spring.hometask.service.BookingService.bookTickets(..)) && args(tickets))"
     )
     public void countTicketBookedTimes(Set<Ticket> tickets) {
         tickets.forEach(ticket -> {
@@ -54,7 +52,7 @@ public class CounterAspect {
     }
 
     public EventStatistic getStatisticByEvent(Event e) {
-        return eventStatistic.get(e);
+        return eventStatistic.getOrDefault(e, new EventStatistic());
     }
 
     public Map<Event, EventStatistic> getAllStatistic() {

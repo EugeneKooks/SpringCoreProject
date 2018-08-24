@@ -25,7 +25,11 @@ public class User extends DomainObject {
         this.email = email;
     }
 
-    public String getFirstName() {
+    public User() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getFirstName() {
         return firstName;
     }
 

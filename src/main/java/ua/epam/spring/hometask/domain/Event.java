@@ -35,7 +35,11 @@ public class Event extends DomainObject {
         this.auditoriums = auditoriums;
     }
 
-    /**
+    public Event() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
      * Checks if event is aired on particular <code>dateTime</code> and assigns
      * auditorium to it.
      * 

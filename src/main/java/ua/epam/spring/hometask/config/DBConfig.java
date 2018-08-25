@@ -26,10 +26,5 @@ public class DBConfig {
     @Bean
     public JdbcTemplate getNamedParameterJdbcTemplate() {
         return new JdbcTemplate(dataSource());
-    }
-
-    @PostConstruct
-    public void startDBManager() {
-        DatabaseManagerSwing.main(new String[]{"--url", "jdbc:h2:mem:testdb", "--user", "sa", "--password", ""});
-    }
+    }   
 }
